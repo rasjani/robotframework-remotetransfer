@@ -1,0 +1,3 @@
+robotframework
+robotframework-salabsutils>=0.0.6
+robotremoteserver
