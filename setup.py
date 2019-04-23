@@ -7,7 +7,11 @@ remotetransfer
 from os.path import abspath, dirname, join
 from setuptools import setup, find_packages
 import sys
-from src.RemoteTransfer import get_version
+
+version_data = {}
+with open(join("src", "RemoteTransfer", "version.py")) as f:
+    exec(f.read(), version_data)
+
 
 CWD = abspath(dirname(__file__))
 IS_PYTHON3 = sys.version_info[0] >= 3
@@ -45,7 +49,7 @@ Framework :: Robot Framework :: Library
 
 setup(
     name='robotframework-%s' % LIBRARY_NAME.lower(),
-    version=get_version(),
+    version=version_data['VERSION'],
     description='Keyword library to allow transfering screenshots from remoteserver to local machine',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',

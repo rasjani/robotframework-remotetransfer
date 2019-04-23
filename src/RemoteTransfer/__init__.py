@@ -5,7 +5,7 @@ import os
 from robot.libraries.BuiltIn import BuiltIn, RobotNotRunningError
 from glob import glob
 import base64
-from .version import get_version
+
 
 class RemoteTransfer(DynamicRobotApiClass):
     @keyword
